@@ -1,5 +1,5 @@
 class Hotel < ActiveRecord::Base
-	has_many :comments
+	has_many :comments, dependent: :destroy
 
 	validates :name, presence: true, length: {minimum:5, maximum: 100}
 	validates :image, presence: true, length: {minimum:5, maximum: 100}
