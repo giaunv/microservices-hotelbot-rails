@@ -1,4 +1,5 @@
 class HotelsController < ApplicationController
+  http_basic_authenticate_with name: "giaunv", password: "secret", except: [:index, :show]
   before_action :set_hotel, only: [:show, :edit, :update, :destroy]
 
   # GET /hotels

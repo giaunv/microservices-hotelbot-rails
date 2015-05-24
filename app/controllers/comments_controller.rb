@@ -1,4 +1,6 @@
 class CommentsController < ApplicationController
+  http_basic_authenticate_with name: "giaunv", password: "secret", only: :destroy
+
   def create
     @hotel = Hotel.find(params[:hotel_id])
     @comment = @hotel.comments.create(comment_params)
